@@ -1,16 +1,18 @@
-## Hi there 👋
+# the-curious
 
-<!--
-**the-curious-2025/the-curious-2025** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I’m the guy who keeps a machine clean, knows what’s running on it, and likes tools that behave. Small, practical, and a little stubborn when it comes to doing the right thing.
 
-Here are some ideas to get you started:
+Skills
+Python • Bash • JavaScript • HTML/CSS • Linux • Networking
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Right now
+- Learning better network scanning
+- Following how exploits actually behave
+- Solving CTFs by building my own steps
+
+Contact
+- Email: sruly@thecurious.info
+- JTech Forums: forums.jtechforums.org/u/the-curious
+- Mitmachim: mitmachim.top/user/הסקרן
+
+© 2026 the-curious. Learning to code, one question at a time.
