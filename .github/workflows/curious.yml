@@ -1,0 +1,31 @@
+name: the curious ones
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+# one at a time, so two solvers can't race on the README
+concurrency:
+  group: curious-ones
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # everything from the issue goes through env, never straight into the script
+      - name: check the flag
+        env:
+          FLAG: ${{ secrets.CURIOUS_FLAG }}
+          TITLE: ${{ github.event.issue.title }}
+          LOGIN: ${{ github.event.issue.user.login }}
+          NUMBER: ${{ github.event.issue.number }}
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: python3 .github/curious.py

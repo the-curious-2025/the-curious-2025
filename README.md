@@ -17,22 +17,19 @@ I like machines I can account for, tools that behave, and knowing exactly what's
 
 <br>
 
-| Recon & offense | | |
-|:--|:--|:--|
-| [**AegisPT**](https://github.com/the-curious-2025/AegisPT) | `python` | Deterministic pentest workflow orchestrator for Kali Linux |
-| [**recon-master**](https://github.com/the-curious-2025/recon-master) | `python` | Comprehensive recon in one run |
-| [**port-scanner**](https://github.com/the-curious-2025/port-scanner) | `python` | Multithreaded TCP scanner with banner grabbing |
-| [**http-header-analyzer**](https://github.com/the-curious-2025/http-header-analyzer) | `python` | Flags missing HTTP security headers |
-| [**recon-bash-scripts**](https://github.com/the-curious-2025/recon-bash-scripts) | `shell` | Subdomain enum, whois, DNS recon |
-| [**curiosity-ctf**](https://github.com/the-curious-2025/curiosity-ctf) | `python` | A multi-layer CTF. Seven steps, one flag |
-| **Omarchy** | | |
-| [**omarchy-redcell**](https://github.com/the-curious-2025/omarchy-redcell) | `shell` | One command that turns Omarchy into a pentest workstation |
-| [**zmanbar-omarchy**](https://github.com/the-curious-2025/zmanbar-omarchy) | `javascript` | Hebrew-date widget for the Omarchy bar |
-| **Everything else** | | |
-| [**MTKClientPortable**](https://github.com/the-curious-2025/MTKClientPortable) | `python` | MTKClient for Windows with its own bundled Python, nothing to install |
-| [**gmail-lock**](https://github.com/the-curious-2025/gmail-lock) | `javascript` | Chrome extension that password-locks Gmail on shared machines |
-| [**linux-practice-shell**](https://github.com/the-curious-2025/linux-practice-shell) | `kotlin` | Ubuntu-style terminal simulator for Android |
-| [**forum-session-keeper**](https://github.com/the-curious-2025/forum-session-keeper) | `python` | Keeps a forum session alive, reliably |
+**There's a flag hidden on this page.** Find it and your name goes on the list below. No scanners, no brute force, nothing outside this page. Just curiosity.
+
+<details>
+<summary>stuck?</summary>
+<br>
+Watch the banner for a full loop. It shows five things, not four.
+</details>
+
+#### the curious ones
+
+<!-- curious-ones:start -->
+_nobody yet. be the first._
+<!-- curious-ones:end -->
 
 <br>
 
