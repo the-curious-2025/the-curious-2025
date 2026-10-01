@@ -28,7 +28,7 @@ Watch the banner for a full loop. It shows five things, not four.
 #### the curious ones
 
 <!-- curious-ones:start -->
-_nobody yet. be the first._
+1. [@the-curious-2025](https://github.com/the-curious-2025) &nbsp;<sub>2026-10-01</sub>
 <!-- curious-ones:end -->
 
 <br>
