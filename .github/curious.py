@@ -1,6 +1,7 @@
 # Checks an issue that claims to have found the flag.
-# Title must be sha256("<flag>:<username>") of whoever opened it,
-# so a solved issue doesn't give the answer away to anyone else.
+# The proof is sha256("<flag>:<username>") of whoever opened it, so a
+# solved issue doesn't give the answer away to anyone else. It comes from
+# the issue form, or the title for anyone who opens a plain issue.
 
 import datetime
 import hashlib
@@ -12,7 +13,7 @@ import sys
 START = "<!-- curious-ones:start -->"
 END = "<!-- curious-ones:end -->"
 
-title = os.environ["TITLE"].strip().lower()
+text = os.environ["TITLE"] + " " + os.environ.get("BODY", "")
 login = os.environ["LOGIN"]
 number = os.environ["NUMBER"]
 flag = os.environ.get("FLAG", "")
@@ -27,8 +28,10 @@ def git(*args):
 
 
 # not a submission, leave the issue alone
-if not re.fullmatch(r"[0-9a-f]{64}", title):
+found = re.search(r"(?<![0-9a-fA-F])[0-9a-fA-F]{64}(?![0-9a-fA-F])", text)
+if not found:
     sys.exit(0)
+proof = found.group(0).lower()
 
 if not flag:
     sys.exit("CURIOUS_FLAG secret is missing, leaving the issue open")
@@ -37,7 +40,8 @@ if not re.fullmatch(r"[A-Za-z0-9-]+", login):
     sys.exit(f"unexpected login: {login!r}")
 
 valid = {hashlib.sha256(f"{flag}:{name}".encode()).hexdigest() for name in (login, login.lower())}
-if title not in valid:
+if proof not in valid:
+    gh("edit", "--title", "not quite")
     gh("comment", "--body", "Not quite. The username part has to be yours, exactly as it is on GitHub.")
     gh("close", "--reason", "not planned")
     sys.exit(0)
@@ -48,6 +52,7 @@ block, tail = rest.split(END)
 entries = [line for line in block.strip().splitlines() if re.match(r"\d+\. ", line)]
 
 if any(f"github.com/{login.lower()})" in line.lower() for line in entries):
+    gh("edit", "--title", f"@{login} found the flag")
     gh("comment", "--body", "You're already on the list.")
     gh("close", "--reason", "completed")
     sys.exit(0)
@@ -66,5 +71,6 @@ for attempt in range(3):
 else:
     sys.exit("push failed")
 
+gh("edit", "--title", f"@{login} found the flag")
 gh("comment", "--body", f"You found it. You're #{len(entries)} on the list.")
 gh("close", "--reason", "completed")

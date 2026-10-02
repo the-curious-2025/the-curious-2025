@@ -24,6 +24,7 @@ jobs:
         env:
           FLAG: ${{ secrets.CURIOUS_FLAG }}
           TITLE: ${{ github.event.issue.title }}
+          BODY: ${{ github.event.issue.body }}
           LOGIN: ${{ github.event.issue.user.login }}
           NUMBER: ${{ github.event.issue.number }}
           GH_TOKEN: ${{ github.token }}

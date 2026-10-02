@@ -1,0 +1,16 @@
+name: I found the flag
+description: Sign the list on the profile page.
+title: I found the flag
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Nice. Paste your proof below and your name goes on the list in a minute or two.
+  - type: input
+    id: proof
+    attributes:
+      label: Proof
+      description: "sha256 of <flag>:<your github username>"
+      placeholder: 64 hex characters
+    validations:
+      required: true
